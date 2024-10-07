@@ -61,8 +61,10 @@ export default function Filters() {
                             onClick={() => setParams({ filterBy: value })}
                             color={`${filterBy === value ? 'red' : 'gray'}`}
                         >
-                            <Icon className='mr-3 h-4 w-4'/>
-                            {label}
+                            <div className='flex flex-row items-center'>
+                                <Icon className='mr-3 h-4 w-4'/>
+                                {label}
+                            </div>
                         </Button>
                     ))}
                 </ButtonGroup>
@@ -77,8 +79,11 @@ export default function Filters() {
                             onClick={() => setParams({ orderBy: value })}
                             color={`${oderyBy === value ? 'red' : 'gray'}`}
                         >
-                            <Icon className='mr-3 h-4 w-4'/>
-                            {label}
+                            <div className='flex flex-row items-center'>
+                                <Icon className='mr-3 h-4 w-4'/>
+                                {label}
+                            </div>
+                            
                         </Button>
                     ))}
                 </ButtonGroup>
