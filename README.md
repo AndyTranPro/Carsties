@@ -1,4 +1,4 @@
-# FooBooLoo Game Frontend
+# Carsties
 
 This project is the demo for an auction wep app. This application is built based on microservice architecture. The backend system was completed using C# .NET and the frontend was developed by Next.js.
 
