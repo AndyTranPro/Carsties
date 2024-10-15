@@ -13,7 +13,7 @@ import { FieldValues, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 export default function BidForm({ auctionId, highBid }: Props) {
-    const {register, handleSubmit, reset, formState: {errors}} = useForm();
+    const {register, handleSubmit, reset, formState: {}} = useForm();
     const addBid = useBidStore(state => state.addBid);
 
     function onSubmit(data: FieldValues) {

@@ -17,6 +17,8 @@ type Props = {
     auction: Auction
 }
 
+type GetBidsResponse = Bid[] | { error: { message: string } };
+
 export default function BidList({ user, auction }: Props) {
     const [loading, setLoading] = useState(true);
     const bids = useBidStore(state => state.bids);
@@ -31,15 +33,15 @@ export default function BidList({ user, auction }: Props) {
         ? current.amount 
         : prev, 0);
 
-    useEffect(() => {
-        getBidsForAuction(auction.id)
-            .then((res: any) => {
-                if (res.error) throw res.error;
-                setBids(res as Bid[]);
-            }).catch(err => {
-                toast.error(err.message);
-            }).finally(() => setLoading(false));
-    }, [auction.id, setLoading, setBids]);
+        useEffect(() => {
+            getBidsForAuction(auction.id)
+                .then((res: GetBidsResponse) => {
+                    if ('error' in res) throw res.error;
+                    setBids(res as Bid[]);
+                }).catch(err => {
+                    toast.error(err.message);
+                }).finally(() => setLoading(false));
+        }, [auction.id, setLoading, setBids]);
 
     useEffect(() => {
         setOpen(openForBids);

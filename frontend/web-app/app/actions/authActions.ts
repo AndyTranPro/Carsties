@@ -9,7 +9,7 @@ export async function getCurrentUser() {
         if (!session) return null;
 
         return session.user;
-    } catch (error) {
+    } catch {
         return null;
     }
 }

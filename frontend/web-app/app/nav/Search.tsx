@@ -12,7 +12,7 @@ export default function Search() {
     const setSearchValue = useParamsStore(state => state.setSearchValue);
     const searchValue = useParamsStore(state => state.searchValue);
 
-    function onChange(event: any) {
+    function onChange(event: React.ChangeEvent<HTMLInputElement>) {
         setSearchValue(event.target.value);
     }
 
@@ -25,7 +25,7 @@ export default function Search() {
     return (
         <div className='flex w-[50%] items-center border-2 rounded-full py-2 shadow-sm'>
             <input
-                onKeyDown={(e: any) => {
+                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                     if (e.key === 'Enter') search();
                 }}
                 value={searchValue}
