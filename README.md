@@ -36,3 +36,10 @@ mkcert -key-file carsties.local.key -cert-file carsties.local.crt app.carsties.l
 127.0.0.1 id.carsties.local app.carsties.local api.carsties.local
 ```
 9. You should now be able to browse to the app on https://app.carsties.local
+10. To run the app locally using Kubernetes, you need to run the following commands:
+```
+cd infra
+kubectl apply -f ingress/
+kubectl apply -f K8S/
+```
+The following commands above helps to create the kube pods and all the necessary deployments for this application. Now, you can access to the app on https://app.carsties.local
