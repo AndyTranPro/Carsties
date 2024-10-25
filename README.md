@@ -42,4 +42,4 @@ cd infra
 kubectl apply -f ingress/
 kubectl apply -f K8S/
 ```
-The following commands above helps to create the kube pods and all the necessary deployments for this application. Now, you can access to the app on https://app.carsties.local
+The following commands above helps to create the pods and all the necessary deployments for this application. Now, you can access to the app on https://app.carsties.local
